@@ -118,13 +118,10 @@ function TechVisual() {
 }
 
 export default function Home() {
-  const [roleIdx, setRoleIdx] = useState(0);
+  const [roleIdx, setRoleIdx] = useState(1);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setRoleIdx(prev => (prev + 1) % ROLES.length);
-    }, 3000);
-    return () => clearInterval(interval);
+    // static role presentation
   }, []);
 
   return (
