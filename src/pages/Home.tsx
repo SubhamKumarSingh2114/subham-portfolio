@@ -1,10 +1,17 @@
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { PROFILE } from '../data/profile';
 import { ArrowRight, FileText, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-function Terminal() {
+const ROLES = [
+  { title1: 'SOFTWARE', title2: 'ENGINEER', term: 'software_engineer' },
+  { title1: 'DATA', title2: 'ANALYST', term: 'data_analyst' },
+  { title1: 'DATA', title2: 'ENGINEER', term: 'data_engineer' },
+  { title1: 'PRODUCT', title2: 'ENGINEER', term: 'product_engineer' }
+];
+
+function Terminal({ roleIdx }: { roleIdx: number }) {
   const [lines, setLines] = useState<string[]>([]);
   
   useEffect(() => {
@@ -14,10 +21,8 @@ function Terminal() {
       { cmd: 'focus', out: 'Full-Stack • Product • Systems' },
       { cmd: 'status', out: 'OPEN_TO_OPPORTUNITIES_' }
     ];
-    const roles = ['software_engineer', 'data_analyst', 'data_engineer', 'product_engineer'];
     
     let currentLine = 0;
-    let roleIdx = 0;
     
     const interval = setInterval(() => {
       if (currentLine < commands.length) {
@@ -27,24 +32,22 @@ function Terminal() {
         currentLine++;
       }
     }, 800);
-
-    const roleInterval = setInterval(() => {
-      setLines(prev => {
-        if (prev.length > 3) {
-          roleIdx = (roleIdx + 1) % roles.length;
-          const next = [...prev];
-          next[3] = roles[roleIdx];
-          return next;
-        }
-        return prev;
-      });
-    }, 2000);
     
     return () => {
       clearInterval(interval);
-      clearInterval(roleInterval);
     };
   }, []);
+
+  useEffect(() => {
+    setLines(prev => {
+      if (prev.length > 3) {
+        const next = [...prev];
+        next[3] = ROLES[roleIdx].term;
+        return next;
+      }
+      return prev;
+    });
+  }, [roleIdx]);
 
   return (
     <div className="font-mono text-sm sm:text-base glass-panel rounded-lg p-6 w-full max-w-md mt-12 md:mt-0 border border-white/10 shadow-2xl relative overflow-hidden group">
@@ -115,6 +118,15 @@ function TechVisual() {
 }
 
 export default function Home() {
+  const [roleIdx, setRoleIdx] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRoleIdx(prev => (prev + 1) % ROLES.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="min-h-[80vh] flex flex-col justify-center pt-10">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -129,9 +141,19 @@ export default function Home() {
             <h2 className="text-primary font-mono text-sm tracking-widest uppercase">
               {PROFILE.name}
             </h2>
-            <h1 className="heading-1">
-              <span className="block text-white mb-2">SOFTWARE ENGINEER</span>
-              <span className="block text-textSecondary text-3xl md:text-4xl lg:text-5xl">PRODUCT BUILDER</span>
+            <h1 className="heading-1 h-32 md:h-40 flex flex-col justify-center overflow-hidden">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={roleIdx}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.4 }}
+                >
+                  <span className="block text-white mb-2">{ROLES[roleIdx].title1}</span>
+                  <span className="block text-textSecondary text-3xl md:text-4xl lg:text-5xl">{ROLES[roleIdx].title2}</span>
+                </motion.div>
+              </AnimatePresence>
             </h1>
             <p className="text-lg text-textSecondary max-w-xl leading-relaxed mt-6">
               {PROFILE.headline}
@@ -170,7 +192,7 @@ export default function Home() {
         >
           <TechVisual />
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full flex justify-center mt-20 z-30">
-            <Terminal />
+            <Terminal roleIdx={roleIdx} />
           </div>
         </motion.div>
         
