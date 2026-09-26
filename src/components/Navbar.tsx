@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Menu, X, Github, FileText } from 'lucide-react';
 import { PROFILE } from '../data/profile';
 import clsx from 'clsx';
+import Logo from './Logo';
+
 
 const NAV_LINKS = [
   { name: 'ABOUT', path: '/about' },
@@ -31,9 +33,7 @@ export default function Navbar() {
     )}>
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 flex items-center justify-between">
         
-        <Link to="/" className="text-xl font-bold tracking-widest text-white hover:text-primary transition-colors">
-          SK <span className="text-textSecondary font-light">/ SUBHAM</span>
-        </Link>
+        <Logo />
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center space-x-8">
