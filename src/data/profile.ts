@@ -5,7 +5,7 @@ export const PROFILE = {
     "AI/ML ENGINEER",
     "BACKEND DEVELOPER"
   ],
-  headline: "Extracting actionable insights, building robust data pipelines, and leveraging machine learning for data-driven decisions.",
+  headline: "Building intelligent systems, scalable backend architectures, and practical machine learning applications.",
   email: "subhamks2114@gmail.com",
   links: {
     linkedin: "https://www.linkedin.com/in/subham-kumar-singh-7864702a3/",

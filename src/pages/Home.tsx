@@ -18,7 +18,7 @@ function Terminal({ roleIdx }: { roleIdx: number }) {
     const commands = [
       { cmd: 'whoami', out: 'subham_kumar_singh' },
       { cmd: 'role', out: ROLES[roleIdx].term },
-      { cmd: 'focus', out: 'Data Analytics • ML • Pipelines' },
+      { cmd: 'focus', out: 'Full-Stack • Product • Systems' },
       { cmd: 'status', out: 'OPEN_TO_OPPORTUNITIES_' }
     ];
     
