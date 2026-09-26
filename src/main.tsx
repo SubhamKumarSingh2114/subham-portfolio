@@ -4,20 +4,27 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App.tsx'
 import './index.css'
 
-class ErrorBoundary extends React.Component {
-  constructor(props) {
+interface ErrorBoundaryState {
+  hasError: boolean;
+  error: Error | null;
+}
+
+class ErrorBoundary extends React.Component<{ children: React.ReactNode }, ErrorBoundaryState> {
+  constructor(props: { children: React.ReactNode }) {
     super(props);
     this.state = { hasError: false, error: null };
   }
-  static getDerivedStateFromError(error) {
+  static getDerivedStateFromError(error: Error): ErrorBoundaryState {
     return { hasError: true, error };
   }
   render() {
     if (this.state.hasError) {
-      return <div style={{color:'red', padding:'20px', fontFamily:'monospace', background:'black', minHeight:'100vh'}}>
-        <h2>React Error!</h2>
-        <pre>{this.state.error?.stack}</pre>
-      </div>;
+      return (
+        <div style={{ color: 'red', padding: '20px', fontFamily: 'monospace', background: 'black', minHeight: '100vh' }}>
+          <h2>Something went wrong.</h2>
+          <pre>{this.state.error?.stack}</pre>
+        </div>
+      );
     }
     return this.props.children;
   }
