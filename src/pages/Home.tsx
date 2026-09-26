@@ -17,7 +17,7 @@ function Terminal({ roleIdx }: { roleIdx: number }) {
   useEffect(() => {
     const commands = [
       { cmd: 'whoami', out: 'subham_kumar_singh' },
-      { cmd: 'role', out: 'software_engineer' },
+      { cmd: 'role', out: ROLES[roleIdx].term },
       { cmd: 'focus', out: 'Full-Stack • Product • Systems' },
       { cmd: 'status', out: 'OPEN_TO_OPPORTUNITIES_' }
     ];
