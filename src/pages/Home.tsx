@@ -14,8 +14,10 @@ function Terminal() {
       { cmd: 'focus', out: 'Full-Stack • Product • Systems' },
       { cmd: 'status', out: 'OPEN_TO_OPPORTUNITIES_' }
     ];
+    const roles = ['software_engineer', 'data_analyst', 'data_engineer', 'product_engineer'];
     
     let currentLine = 0;
+    let roleIdx = 0;
     
     const interval = setInterval(() => {
       if (currentLine < commands.length) {
@@ -23,12 +25,25 @@ function Terminal() {
         const out = commands[currentLine].out;
         setLines(prev => [...prev, `$ ${cmd}`, out]);
         currentLine++;
-      } else {
-        clearInterval(interval);
       }
     }, 800);
+
+    const roleInterval = setInterval(() => {
+      setLines(prev => {
+        if (prev.length > 3) {
+          roleIdx = (roleIdx + 1) % roles.length;
+          const next = [...prev];
+          next[3] = roles[roleIdx];
+          return next;
+        }
+        return prev;
+      });
+    }, 2000);
     
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+      clearInterval(roleInterval);
+    };
   }, []);
 
   return (
