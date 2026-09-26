@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Dark background circle -->
+  <rect width="64" height="64" rx="14" fill="#0a0a0a"/>
+
+  <!-- Outer hexagon ring (violet brand color) -->
+  <path
+    d="M32 4L56 18V46L32 60L8 46V18L32 4Z"
+    stroke="#6d28d9"
+    stroke-width="2.5"
+    fill="none"
+  />
+
+  <!-- Inner hexagon subtle fill -->
+  <path
+    d="M32 11L50 21.5V42.5L32 53L14 42.5V21.5L32 11Z"
+    fill="#6d28d9"
+    fill-opacity="0.15"
+  />
+
+  <!-- Letter S — built with geometric bars -->
+  <!-- Top horizontal bar -->
+  <rect x="20" y="19" width="17" height="4" rx="2" fill="#8b5cf6"/>
+  <!-- Top-right vertical bar -->
+  <rect x="33" y="19" width="4" height="14" rx="2" fill="#6d28d9"/>
+  <!-- Middle horizontal bar -->
+  <rect x="20" y="29" width="17" height="4" rx="2" fill="#8b5cf6"/>
+  <!-- Bottom-left vertical bar -->
+  <rect x="20" y="31" width="4" height="14" rx="2" fill="#6d28d9"/>
+  <!-- Bottom horizontal bar -->
+  <rect x="20" y="41" width="17" height="4" rx="2" fill="#8b5cf6"/>
+
+  <!-- Accent dot top-right -->
+  <circle cx="46" cy="18" r="3.5" fill="#8b5cf6"/>
+</svg>
