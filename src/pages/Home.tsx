@@ -18,7 +18,7 @@ function Terminal({ roleIdx }: { roleIdx: number }) {
     const commands = [
       { cmd: 'whoami', out: 'subham_kumar_singh' },
       { cmd: 'role', out: ROLES[roleIdx].term },
-      { cmd: 'focus', out: 'Full-Stack • Product • Systems' },
+      { cmd: 'focus', out: 'Data Analytics • ML • Pipelines' },
       { cmd: 'status', out: 'OPEN_TO_OPPORTUNITIES_' }
     ];
     
@@ -50,8 +50,8 @@ function Terminal({ roleIdx }: { roleIdx: number }) {
   }, [roleIdx]);
 
   return (
-    <div className="font-mono text-sm sm:text-base glass-panel rounded-lg p-6 w-full max-w-md mt-12 md:mt-0 border border-white/10 shadow-2xl relative overflow-hidden group">
-      <div className="absolute top-0 left-0 right-0 h-8 bg-white/5 border-b border-white/10 flex items-center px-4 space-x-2">
+    <div className="font-mono text-sm sm:text-base glass-panel rounded-lg p-6 w-full max-w-md mt-12 md:mt-0 border border-black/10 dark:border-white/10 shadow-2xl relative overflow-hidden group">
+      <div className="absolute top-0 left-0 right-0 h-8 bg-black/5 dark:bg-white/5 border-b border-black/10 dark:border-white/10 flex items-center px-4 space-x-2">
         <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
         <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
         <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
@@ -60,7 +60,7 @@ function Terminal({ roleIdx }: { roleIdx: number }) {
         {lines.map((line, i) => (
           <div key={i} className="flex">
             {line.startsWith('$') ? (
-              <span className="text-white font-medium mr-2">{line}</span>
+              <span className="text-textPrimary font-medium mr-2">{line}</span>
             ) : (
               <span className={line.includes('OPEN') ? 'text-green-400' : 'text-primary'}>{line}</span>
             )}
@@ -147,7 +147,7 @@ export default function Home() {
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.4 }}
                 >
-                  <span className="block text-white mb-2">{ROLES[roleIdx].title1}</span>
+                  <span className="block text-textPrimary mb-2">{ROLES[roleIdx].title1}</span>
                   <span className="block text-textSecondary text-3xl md:text-4xl lg:text-5xl">{ROLES[roleIdx].title2}</span>
                 </motion.div>
               </AnimatePresence>
@@ -158,24 +158,24 @@ export default function Home() {
           </div>
 
           <div className="flex flex-wrap gap-4 pt-4">
-            <Link to="/projects" className="group flex items-center gap-2 bg-white text-black px-6 py-3 rounded-sm font-semibold tracking-wide hover:bg-gray-200 transition-colors">
+            <Link to="/projects" className="group flex items-center gap-2 bg-textPrimary text-background px-6 py-3 rounded-sm font-semibold tracking-wide hover:opacity-90 transition-opacity">
               EXPLORE MY WORK
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
-            <a href={PROFILE.links.resume} target="_blank" rel="noreferrer" className="flex items-center gap-2 glass-panel hover:bg-white/10 text-white px-6 py-3 rounded-sm font-semibold tracking-wide transition-colors">
+            <a href={PROFILE.links.resume} target="_blank" rel="noreferrer" className="flex items-center gap-2 glass-panel hover:bg-surface text-textPrimary px-6 py-3 rounded-sm font-semibold tracking-wide transition-colors">
               <FileText size={18} />
               VIEW RESUME
             </a>
           </div>
 
-          <div className="flex gap-6 pt-8 border-t border-white/10">
-            <a href={PROFILE.links.github} target="_blank" rel="noreferrer" className="text-sm font-mono tracking-wider text-textSecondary hover:text-white flex items-center gap-1 group">
+          <div className="flex gap-6 pt-8 border-t border-black/10 dark:border-white/10">
+            <a href={PROFILE.links.github} target="_blank" rel="noreferrer" className="text-sm font-mono tracking-wider text-textSecondary hover:text-textPrimary flex items-center gap-1 group">
               <ChevronRight size={14} className="text-primary opacity-0 group-hover:opacity-100 transition-opacity" /> GitHub
             </a>
-            <a href={PROFILE.links.linkedin} target="_blank" rel="noreferrer" className="text-sm font-mono tracking-wider text-textSecondary hover:text-white flex items-center gap-1 group">
+            <a href={PROFILE.links.linkedin} target="_blank" rel="noreferrer" className="text-sm font-mono tracking-wider text-textSecondary hover:text-textPrimary flex items-center gap-1 group">
               <ChevronRight size={14} className="text-primary opacity-0 group-hover:opacity-100 transition-opacity" /> LinkedIn
             </a>
-            <a href={PROFILE.links.email} className="text-sm font-mono tracking-wider text-textSecondary hover:text-white flex items-center gap-1 group">
+            <a href={PROFILE.links.email} className="text-sm font-mono tracking-wider text-textSecondary hover:text-textPrimary flex items-center gap-1 group">
               <ChevronRight size={14} className="text-primary opacity-0 group-hover:opacity-100 transition-opacity" /> Email
             </a>
           </div>

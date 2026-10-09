@@ -44,10 +44,10 @@ export default function Logo() {
 
       {/* Wordmark */}
       <div className="flex flex-col leading-none">
-        <span className="text-white font-bold text-sm tracking-[0.18em] uppercase">
+        <span className="text-textPrimary font-bold text-sm tracking-[0.18em] uppercase">
           Subham
         </span>
-        <span className="text-[#6d28d9] font-mono text-[10px] tracking-[0.25em] uppercase mt-0.5">
+        <span className="text-primary font-mono text-[10px] tracking-[0.25em] uppercase mt-0.5">
           Kumar Singh
         </span>
       </div>

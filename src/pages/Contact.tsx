@@ -8,19 +8,19 @@ export default function Contact() {
       title: 'GITHUB',
       desc: 'Explore my code and projects.',
       link: PROFILE.links.github,
-      icon: <Github size={32} className="text-white mb-6 group-hover:text-primary transition-colors" />
+      icon: <Github size={32} className="text-textPrimary mb-6 group-hover:text-primary transition-colors" />
     },
     {
       title: 'LINKEDIN',
       desc: 'Connect professionally.',
       link: PROFILE.links.linkedin,
-      icon: <Linkedin size={32} className="text-white mb-6 group-hover:text-[#0A66C2] transition-colors" />
+      icon: <Linkedin size={32} className="text-textPrimary mb-6 group-hover:text-[#0A66C2] transition-colors" />
     },
     {
       title: 'EMAIL',
       desc: 'Let\'s discuss an opportunity.',
       link: PROFILE.links.email,
-      icon: <Mail size={32} className="text-white mb-6 group-hover:text-red-400 transition-colors" />
+      icon: <Mail size={32} className="text-textPrimary mb-6 group-hover:text-red-400 transition-colors" />
     }
   ];
 
@@ -46,10 +46,10 @@ export default function Contact() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: idx * 0.1 }}
-            className="group glass-panel p-8 rounded-xl text-center hover:bg-white/5 transition-all duration-300 flex flex-col items-center justify-center border border-white/5 hover:border-white/20"
+            className="group glass-panel p-8 rounded-xl text-center hover:bg-surface transition-all duration-300 flex flex-col items-center justify-center border border-black/10 dark:border-white/5 hover:border-primary/40 shadow-sm"
           >
             {c.icon}
-            <h3 className="text-xl font-bold tracking-widest text-white mb-2">{c.title}</h3>
+            <h3 className="text-xl font-bold tracking-widest text-textPrimary mb-2">{c.title}</h3>
             <p className="text-sm text-textSecondary">{c.desc}</p>
           </motion.a>
         ))}
@@ -61,10 +61,10 @@ export default function Contact() {
         transition={{ duration: 1, delay: 0.5 }}
         className="mt-32 text-center"
       >
-        <div className="inline-block glass-panel p-12 rounded-2xl relative overflow-hidden border border-white/10">
+        <div className="inline-block glass-panel p-12 rounded-2xl relative overflow-hidden border border-black/10 dark:border-white/10">
           <div className="absolute inset-0 bg-gradient-to-b from-primary/10 to-transparent pointer-events-none"></div>
           
-          <h2 className="text-2xl md:text-4xl font-bold text-white mb-10 tracking-tight">
+          <h2 className="text-2xl md:text-4xl font-bold text-textPrimary mb-10 tracking-tight">
             LET'S BUILD SOMETHING<br/>WORTH TALKING ABOUT.
           </h2>
           
@@ -73,7 +73,7 @@ export default function Contact() {
               href={PROFILE.links.resume} 
               target="_blank" 
               rel="noreferrer"
-              className="flex items-center gap-2 bg-white text-black px-8 py-4 rounded-md font-bold tracking-widest text-sm hover:bg-gray-200 transition-colors w-full sm:w-auto justify-center"
+              className="flex items-center gap-2 bg-textPrimary text-background px-8 py-4 rounded-md font-bold tracking-widest text-sm hover:opacity-90 transition-opacity w-full sm:w-auto justify-center"
             >
               <FileText size={18} />
               VIEW RESUME
@@ -81,7 +81,7 @@ export default function Contact() {
             <a 
               href={PROFILE.links.resume} 
               download
-              className="flex items-center gap-2 glass-panel border border-white/20 text-white px-8 py-4 rounded-md font-bold tracking-widest text-sm hover:bg-white/10 transition-colors w-full sm:w-auto justify-center"
+              className="flex items-center gap-2 glass-panel border border-black/15 dark:border-white/20 text-textPrimary px-8 py-4 rounded-md font-bold tracking-widest text-sm hover:bg-surface transition-colors w-full sm:w-auto justify-center"
             >
               <Download size={18} />
               DOWNLOAD

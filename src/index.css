@@ -3,26 +3,54 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    /* Dark / Black theme (Default) */
+    --color-bg: 10 10 10;            /* #0a0a0a */
+    --color-surface: 17 17 17;        /* #111111 */
+    --color-primary: 109 40 217;      /* #6d28d9 */
+    --color-secondary: 76 29 149;     /* #4c1d95 */
+    --color-accent: 139 92 246;       /* #8b5cf6 */
+    --color-text-primary: 243 244 246;/* #f3f4f6 */
+    --color-text-secondary: 156 163 175;/* #9ca3af */
+    --grid-line: rgba(255, 255, 255, 0.05);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --card-hover-border: rgba(139, 92, 246, 0.5);
+  }
+
+  .light {
+    /* Light / White theme */
+    --color-bg: 250 250 250;          /* #fafafa */
+    --color-surface: 255 255 255;     /* #ffffff */
+    --color-primary: 109 40 217;      /* #6d28d9 */
+    --color-secondary: 76 29 149;     /* #4c1d95 */
+    --color-accent: 124 58 237;       /* #7c3aed */
+    --color-text-primary: 17 24 39;   /* #111827 (dark slate/black) */
+    --color-text-secondary: 75 85 99; /* #4b5563 (medium gray) */
+    --grid-line: rgba(0, 0, 0, 0.04);
+    --border-color: rgba(0, 0, 0, 0.08);
+    --card-hover-border: rgba(109, 40, 217, 0.4);
+  }
+
   body {
-    @apply bg-background text-textPrimary;
+    @apply bg-background text-textPrimary antialiased transition-colors duration-300;
   }
 }
 
 @layer components {
   .glass-panel {
-    @apply bg-surface/50 backdrop-blur-md border border-white/5 shadow-xl;
+    @apply bg-surface/70 backdrop-blur-md border border-[var(--border-color)] shadow-xl transition-colors duration-300;
   }
   
   .heading-1 {
-    @apply text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-white;
+    @apply text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-textPrimary;
   }
   
   .heading-2 {
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6;
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-textPrimary mb-6;
   }
 
   .nav-link {
-    @apply text-sm font-medium text-textSecondary hover:text-white transition-colors duration-200;
+    @apply text-sm font-medium text-textSecondary hover:text-textPrimary transition-colors duration-200;
   }
 }
 
@@ -32,21 +60,21 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a0a0a;
+  background: rgb(var(--color-bg));
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #333;
+  background: rgba(120, 120, 120, 0.3);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: rgba(120, 120, 120, 0.5);
 }
 
 /* Grid background pattern */
 .bg-grid-pattern {
-  background-image: linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
-                    linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-image: linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+                    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
   background-size: 40px 40px;
 }
