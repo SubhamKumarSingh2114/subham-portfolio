@@ -118,7 +118,7 @@ function TechVisual() {
 }
 
 export default function Home() {
-  const [roleIdx, setRoleIdx] = useState(1);
+  const [roleIdx, setRoleIdx] = useState(0);
 
   useEffect(() => {
     // static role presentation
