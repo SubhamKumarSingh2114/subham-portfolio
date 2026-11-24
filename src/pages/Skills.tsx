@@ -4,11 +4,13 @@ import { PROFILE } from '../data/profile';
 export default function Skills() {
   const sections = [
     { title: 'PROGRAMMING', data: PROFILE.skills.programming },
-    { title: 'AI / MACHINE LEARNING', data: PROFILE.skills.ai_ml },
-    { title: 'BACKEND', data: PROFILE.skills.backend },
-    { title: 'DATABASES', data: PROFILE.skills.databases },
-    { title: 'ALGORITHMS', data: PROFILE.skills.algorithms },
-    { title: 'CLOUD / TOOLS', data: PROFILE.skills.cloud_tools },
+    { title: 'BACKEND ENGINEERING', data: PROFILE.skills.backend },
+    { title: 'GENERATIVE AI & AGENTS', data: PROFILE.skills.generative_ai },
+    { title: 'AI RETRIEVAL & VECTOR SEARCH', data: PROFILE.skills.ai_retrieval },
+    { title: 'MACHINE LEARNING', data: PROFILE.skills.machine_learning },
+    { title: 'DATABASES & ORM', data: PROFILE.skills.databases },
+    { title: 'CLOUD & DEVOPS TOOLS', data: PROFILE.skills.cloud_tools },
+    { title: 'CORE CS CONCEPTS', data: PROFILE.skills.core_concepts },
   ];
 
   return (
@@ -20,7 +22,7 @@ export default function Skills() {
         className="mb-16"
       >
         <h1 className="heading-2">TECHNICAL ARSENAL</h1>
-        <p className="text-lg text-textSecondary">Technologies I use to build scalable systems.</p>
+        <p className="text-lg text-textSecondary">Technologies I use to build scalable backend systems, APIs, and AI integrations.</p>
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">

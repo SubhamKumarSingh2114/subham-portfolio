@@ -2,10 +2,10 @@ export const PROFILE = {
   name: "SUBHAM KUMAR SINGH",
   roles: [
     "SOFTWARE ENGINEER",
-    "AI/ML ENGINEER",
-    "BACKEND DEVELOPER"
+    "BACKEND DEVELOPER",
+    "AI / ML ENGINEER"
   ],
-  headline: "Extracting actionable insights, building robust data pipelines, and leveraging machine learning for data-driven decisions.",
+  headline: "Python backend development, scalable REST APIs, AI/LLM integration, and asynchronous distributed systems.",
   email: "subhamks2114@gmail.com",
   links: {
     linkedin: "https://www.linkedin.com/in/subham-kumar-singh-7864702a3/",
@@ -14,12 +14,14 @@ export const PROFILE = {
     resume: "/resume.pdf"
   },
   skills: {
-    programming: ["Python", "C++"],
-    ai_ml: ["Machine Learning", "Deep Learning", "CNN", "TensorFlow", "FinBERT"],
-    backend: ["FastAPI", "REST APIs", "AsyncIO", "JWT"],
-    databases: ["MongoDB", "MySQL", "PostgreSQL", "SQLite", "Elasticsearch"],
-    algorithms: ["DSA", "BFS", "DFS", "Dijkstra", "Graph Theory", "Priority Queues"],
-    cloud_tools: ["AWS", "Git", "GitHub"]
+    programming: ["Python", "SQL", "C++", "JavaScript"],
+    backend: ["FastAPI", "Flask", "REST APIs", "AsyncIO", "Background Workers", "API Integration"],
+    generative_ai: ["OpenAI API", "LLM Integration", "AI Agent Integration", "MCP-Compatible Tools", "Prompt Testing", "LLM Evaluation"],
+    ai_retrieval: ["Text Embeddings", "FAISS", "Vector Search", "Structured Data Retrieval"],
+    machine_learning: ["Scikit-learn", "TensorFlow", "Keras", "Random Forest", "Model Evaluation"],
+    databases: ["PostgreSQL", "MongoDB", "MySQL", "SQLite", "SQLAlchemy"],
+    cloud_tools: ["Docker", "AWS", "Git", "GitHub", "Linux", "Jupyter Notebook"],
+    core_concepts: ["DBMS", "Data Structures", "Computer Networks", "Problem Solving"]
   },
   experience: [
     {
@@ -27,119 +29,112 @@ export const PROFILE = {
       title: "MACHINE LEARNING INTERN",
       company: "VAIDSYS TECHNOLOGIES",
       date: "Jun 2026 — Jul 2026",
-      location: "Bangalore, Karnataka • Remote",
+      location: "Remote, Bangalore",
       project: "LOAN APPROVAL PREDICTION SYSTEM",
       metrics: [
         { label: "ACCURACY", value: "90%" },
         { label: "AUC-ROC", value: "0.9677" },
-        { label: "APPLICATIONS", value: "2,000" },
-        { label: "FEATURES", value: "14" },
-        { label: "ML MODELS", value: "3" }
+        { label: "APPLICATIONS", value: "2,000" }
       ],
-      models: ["Logistic Regression", "Random Forest", "Gradient Boosting"],
-      topFeatures: ["Credit Score", "Loan Amount", "Annual Income"],
-      technologies: ["Python", "Pandas", "NumPy", "Scikit-learn", "Flask", "Joblib", "Chart.js", "Git", "GitHub", "HTML", "CSS"],
+      description: "Developed a Python and Scikit-learn loan approval prediction model using 2,000 applications. Performed data preprocessing, feature engineering, and integrated the model with a Flask REST API and interactive dashboard.",
+      technologies: ["Python", "Scikit-learn", "Flask", "Pandas", "NumPy", "REST API", "Git"],
       github: "https://github.com/SubhamKumarSingh2114/Loan-Approval-Prediction",
       isPrimary: true
-    },
-    {
-      id: "nss",
-      title: "Volunteer",
-      company: "National Service Scheme (NSS)",
-      date: "",
-      location: "M.S. Ramaiah Institute of Technology",
-      isPrimary: false
-    },
-    {
-      id: "isoi",
-      title: "Student Member",
-      company: "Instrument Society of India (ISOI)",
-      date: "",
-      location: "",
-      isPrimary: false
     }
   ],
   projects: [
     {
-      id: "network-threat",
-      title: "AI NETWORK THREAT INTELLIGENCE PLATFORM",
-      category: "AI / CYBERSECURITY / BACKEND",
-      highlights: ["Random Forest", "Graph Analysis", "BFS", "DFS", "Dijkstra", "FastAPI", "SQLite"],
-      features: ["DDoS Detection", "Port Scan Detection", "Brute Force Detection", "Threat Prediction", "Traffic Logging", "Attacker Tracking", "Security Alerts"],
-      architecture: [
-        "NETWORK TRAFFIC",
-        "THREAT ANALYSIS",
-        "ML + GRAPH ANALYSIS",
-        "ATTACK DETECTION",
-        "FASTAPI",
-        "SECURITY ALERTS"
+      id: "customer-360",
+      title: "CUSTOMER 360 – AI-READY MASTER DATA MANAGEMENT PLATFORM",
+      category: "BACKEND / AGENTIC AI / FULL STACK",
+      highlights: ["Python", "FastAPI", "React", "PostgreSQL", "SQLAlchemy", "MCP", "OAuth2"],
+      features: [
+        "FastAPI REST APIs with OAuth2 authentication and role-based access control (RBAC)",
+        "MCP-compatible tools enabling AI agents to search and retrieve customer data via structured interfaces",
+        "Webhooks for real-time customer updates and multi-tenant architecture with organization-level data isolation"
       ],
-      github: "https://github.com/SubhamKumarSingh2114"
-    },
-    {
-      id: "stock-prediction",
-      title: "STOCK PRICE PREDICTION USING HISTORICAL DATA & SENTIMENT ANALYSIS",
-      category: "MACHINE LEARNING / NLP / TIME SERIES",
-      highlights: ["LSTM", "FinBERT", "TensorFlow", "Keras", "FastAPI", "Sentiment Analysis"],
-      features: [],
       architecture: [
-        "HISTORICAL PRICE DATA + FINANCIAL NEWS",
-        "LSTM + FinBERT",
-        "PREDICTION PIPELINE",
-        "FASTAPI INFERENCE"
+        "REACT FRONTEND",
+        "OAUTH2 AUTH",
+        "FASTAPI BACKEND",
+        "MCP AI AGENT TOOLS",
+        "POSTGRESQL + SQLALCHEMY",
+        "REAL-TIME WEBHOOKS"
       ],
       github: "https://github.com/SubhamKumarSingh2114"
     },
     {
       id: "dispatch-routing",
       title: "HIGH-PERFORMANCE DELIVERY DISPATCH & ROUTING SYSTEM",
-      category: "BACKEND / SYSTEM DESIGN / ALGORITHMS",
-      highlights: ["FastAPI", "MongoDB", "AsyncIO", "Beanie", "Dijkstra", "Priority Queues", "Background Workers"],
-      features: [],
+      category: "BACKEND / DISTRIBUTED SYSTEMS / ASYNCIO",
+      highlights: ["Python", "FastAPI", "MongoDB", "AsyncIO", "Dijkstra", "Priority Queues", "Background Workers"],
+      features: [
+        "Asynchronous dispatch engine assigning orders based on agent location, workload, priority, and ETA",
+        "FastAPI REST APIs, background workers, and Dijkstra shortest-path routing with AsyncIO",
+        "Load simulation supporting 3,000 agents and 10,000 orders to stress-test throughput and latency"
+      ],
       metrics: [
         { label: "AGENTS", value: "3,000" },
         { label: "ORDERS", value: "10,000" }
       ],
       architecture: [
-        "ORDERS",
-        "PRIORITY QUEUE",
-        "ASSIGNMENT ENGINE",
-        "LOCATION + WORKLOAD + ETA",
+        "ORDER INGESTION",
+        "ASYNCIO PRIORITY QUEUES",
+        "LOCATION & ETA ENGINE",
         "DIJKSTRA ROUTING",
-        "DELIVERY ASSIGNMENT"
+        "BACKGROUND WORKERS",
+        "MONGODB PERSISTENCE"
+      ],
+      github: "https://github.com/SubhamKumarSingh2114"
+    },
+    {
+      id: "network-threat",
+      title: "AI NETWORK THREAT INTELLIGENCE PLATFORM",
+      category: "SECURITY / MACHINE LEARNING / BACKEND",
+      highlights: ["Python", "FastAPI", "Random Forest", "SQLite", "BFS / DFS / Dijkstra"],
+      features: [
+        "Machine learning threat detection engine identifying DDoS, port scanning, and brute-force attacks",
+        "FastAPI services for real-time network traffic logging, attacker tracking, and alert prioritization",
+        "Graph-based network analysis and threat investigation using BFS, DFS, and Dijkstra algorithms"
+      ],
+      architecture: [
+        "TRAFFIC CAPTURE",
+        "RANDOM FOREST ML",
+        "GRAPH ANALYSIS (BFS/DFS/DIJKSTRA)",
+        "FASTAPI SERVICES",
+        "ATTACKER TRACKING",
+        "RISK-BASED ALERTS"
       ],
       github: "https://github.com/SubhamKumarSingh2114"
     }
   ],
   achievements: [
-    "Whackiest Hackathon 2024 - Top 25 Team",
-    "Kamaize 2026 - Top 4 Position",
-    "22 Yards of Code 2025",
-    "Kaggle - Formula One Race Position Prediction Challenge (2026)",
-    "80+ DSA Problems on LeetCode / GFG"
+    "Oracle Cloud Infrastructure Data Science Professional Certification",
+    "NPTEL Cloud Computing, IIT Kharagpur",
+    "Solved 80+ problems on LeetCode and GeeksforGeeks"
   ],
   certifications: [
-    "Oracle Cloud Infrastructure - Data Science Professional Certification",
-    "NPTEL - IIT Kharagpur — Cloud Computing"
+    "Oracle Cloud Infrastructure Data Science Professional Certification",
+    "NPTEL Cloud Computing — IIT Kharagpur"
   ],
   education: [
     {
       institution: "M.S. Ramaiah Institute of Technology",
-      degree: "B.E. Electronics and Instrumentation Engineering",
+      degree: "B.E. Electronics and Instrumentation Engineering | GPA: 7.0",
       date: "Oct 2023 — Present",
       location: "Bengaluru, India"
     },
     {
-      institution: "Class XII",
-      degree: "70%",
-      date: "",
-      location: ""
+      institution: "Kendriya Vidyalaya Bihta",
+      degree: "Class XII – Science | 70%",
+      date: "2021 — 2022",
+      location: "Patna, India"
     },
     {
-      institution: "Class X",
-      degree: "60%",
-      date: "",
-      location: ""
+      institution: "Kendriya Vidyalaya Jaisalmer",
+      degree: "Class X – CBSE | 60%",
+      date: "2019 — 2020",
+      location: "Jaisalmer, India"
     }
   ]
 };

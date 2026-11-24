@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom';
 
 const ROLES = [
   { title1: 'SOFTWARE', title2: 'ENGINEER', term: 'software_engineer' },
-  { title1: 'DATA', title2: 'ANALYST', term: 'data_analyst' },
-  { title1: 'DATA', title2: 'ENGINEER', term: 'data_engineer' },
-  { title1: 'PRODUCT', title2: 'ENGINEER', term: 'product_engineer' }
+  { title1: 'BACKEND', title2: 'DEVELOPER', term: 'backend_developer' },
+  { title1: 'AI & ML', title2: 'ENGINEER', term: 'ai_ml_engineer' },
+  { title1: 'SYSTEMS', title2: 'ENGINEER', term: 'systems_engineer' }
 ];
 
 function Terminal({ roleIdx }: { roleIdx: number }) {
@@ -18,7 +18,7 @@ function Terminal({ roleIdx }: { roleIdx: number }) {
     const commands = [
       { cmd: 'whoami', out: 'subham_kumar_singh' },
       { cmd: 'role', out: ROLES[roleIdx].term },
-      { cmd: 'focus', out: 'Data Analytics • ML • Pipelines' },
+      { cmd: 'focus', out: 'Backend • AI/LLM Integration • Microservices' },
       { cmd: 'status', out: 'OPEN_TO_OPPORTUNITIES_' }
     ];
     
