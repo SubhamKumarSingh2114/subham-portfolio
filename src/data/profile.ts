@@ -34,8 +34,12 @@ export const PROFILE = {
       metrics: [
         { label: "ACCURACY", value: "90%" },
         { label: "AUC-ROC", value: "0.9677" },
-        { label: "APPLICATIONS", value: "2,000" }
+        { label: "APPLICATIONS", value: "2,000" },
+        { label: "FEATURES", value: "14" },
+        { label: "ML MODELS", value: "3" }
       ],
+      models: ["Logistic Regression", "Random Forest", "Gradient Boosting"],
+      topFeatures: ["Credit Score", "Loan Amount", "Annual Income"],
       description: "Developed a Python and Scikit-learn loan approval prediction model using 2,000 applications. Performed data preprocessing, feature engineering, and integrated the model with a Flask REST API and interactive dashboard.",
       technologies: ["Python", "Scikit-learn", "Flask", "Pandas", "NumPy", "REST API", "Git"],
       github: "https://github.com/SubhamKumarSingh2114/Loan-Approval-Prediction",
